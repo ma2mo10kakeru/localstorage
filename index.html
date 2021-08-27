@@ -3,6 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+
+    <script>
+        var STATUS0 = "未投与です";
+        var STATUS1 = "未投与です";
+        var STATUS2 = "未投与です";
+        
+        function getStorage0(){
+            var st0 = localStorage.getItem(STATUS0);
+            if(st0 !== null){
+                return st0;
+            }else{
+                return "未投与です"
+            }
+        }
+        function getStorage1(){
+            var st1 = localStorage.getItem(STATUS1);
+            if(st1 !== null){
+                return st1;
+            }else{
+                return "未投与です"
+            }
+        }
+        function getStorage2(){
+            var st2 = localStorage.getItem(STATUS2);
+            if(st2 !== null){
+                return st2;
+            }else{
+                return "未投与です"
+            }
+        }
+        function display(){
+            $("#p0_st").html(status0);
+            $("#p1_st").html(status1);
+            $("#p2_st").html(status2);
+        };
+
+        window.onload = function(){
+            var status0 = getStorage0();
+            var status1 = getStorage1();
+            var status2 = getStorage2();
+            display();
+        }
+    </script>
 </head>
 <body>
     <table>
