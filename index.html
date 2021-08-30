@@ -30,6 +30,10 @@
             
         };
 
+        function st0_change(){
+            localStorage.setItem(STATUS0,"投与済みです");
+            $("#p0_st").html(STATUS0);
+        }
         
     </script>
 </head>
@@ -48,7 +52,7 @@
             <td>東洋次郎</td><td id="p2_st"></td>
         </tr>
     </table>
-    <button id="st0_change">ステータス変更1⃣</button><br>
+    <button id="st0_change" onclick="st0_change()">ステータス変更1⃣</button><br>
     <button id="st1_change">ステータス変更2⃣</button><br>
     <button id="st2_change">ステータス変更3⃣</button><br>
     <button id="reset_st">ステータスリセット</button>
