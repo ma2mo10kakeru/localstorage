@@ -6,15 +6,31 @@
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 
     <script>
-        var status0 = "未投与です";
-        var status1 = "未投与です";
-        var status2 = "未投与です";
 
         window.onload = function(){
-            $("#p0_st").html(status0);
-            $("#p1_st").html(status1);
-            $("#p2_st").html(status2);
+            const status0 = localStorage.getItem(STATUS0);
+            const status1 = localStorage.getItem(STATUS1);
+            const status2 = localStorage.getItem(STATUS2);
+
+            if(status0 !== null){
+                $("#p0_st").html(status0);
+            }else{
+                $("#p0_st").html("未投与です");
+            };
+            if(status1 !== null){
+                $("#p1_st").html(status1);
+            }else{
+                $("#p1_st").html("未投与です");
+            };
+            if(status2 !== null){
+                $("#p2_st").html(status2);
+            }else{
+                $("#p2_st").html("未投与です");
+            };
+            
         };
+
+        
     </script>
 </head>
 <body>
