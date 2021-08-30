@@ -8,7 +8,7 @@
     <script>
 
         window.onload = function(){
-            const status0 = localStorage.getItem(STATUS0);
+            let status0 = localStorage.getItem(STATUS0);
             const status1 = localStorage.getItem(STATUS1);
             const status2 = localStorage.getItem(STATUS2);
 
@@ -17,7 +17,16 @@
             }else{
                 $("#p0_st").html("未投与です");
             }
-            
+            if(status1 !== null){
+                $("#p1_st").html(status1);
+            }else{
+                $("#p1_st").html("未投与です");
+            }
+            if(status2 !== null){
+                $("#p2_st").html(status2);
+            }else{
+                $("#p2_st").html("未投与です");
+            }
             
         };
 
