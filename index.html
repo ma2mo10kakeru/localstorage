@@ -80,6 +80,13 @@
         document.getElementById("p2_st").innerText = "投与済みです";
     }
 
+    function reset(){
+        localStorage.clear();
+        document.getElementById("p0_st").innerText = "未投与です";
+        document.getElementById("p1_st").innerText = "未投与です";
+        document.getElementById("p2_st").innerText = "未投与です";
+    }
+
         
     </script>
 </head>
@@ -101,6 +108,6 @@
     <button id="st0_change" onclick="st0_change()">ステータス変更1⃣</button><br>
     <button id="st1_change" onclick="st1_change()">ステータス変更2⃣</button><br>
     <button id="st2_change" onclick="st2_change()">ステータス変更3⃣</button><br>
-    <button id="reset_st">ステータスリセット</button>
+    <button id="reset_st" onclick="reset()">ステータスリセット</button>
 </body>
 </html>
