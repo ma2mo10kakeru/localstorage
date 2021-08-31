@@ -8,10 +8,16 @@
     <script>
 
     var STORAGE_KEY0 = "P0_ST";
+    var STORAGE_KEY1 = "P1_ST";
+    var STORAGE_KEY2 = "P2_ST";
 
     window.onload = function(){
         let status0 = getStorage0();
         setStatus0(status0);
+        let status1 = getStorage1();
+        setStatus1(status1);
+        let status2 = getStorage2();
+        setStatus2(status2);
     }
 
     function getStorage0(){
@@ -33,6 +39,47 @@
         localStorage.setItem(STORAGE_KEY0,"投与済みです");
         document.getElementById("p0_st").innerText = "投与済みです";
     }
+
+    function getStorage1(){
+        let st1 = localStorage.getItem(STORAGE_KEY1);
+        if(st1 !== null){
+            return st1;
+        }else{
+            return "未投与です";
+        }
+    }
+    function setStatus1(status1){
+        document.getElementById("p1_st").innerText = status1;
+        setStorage1(status1);
+    }
+    function setStorage1(status1){
+        localStorage.setItem(STORAGE_KEY1,status1);
+    }
+    function st1_change(){
+        localStorage.setItem(STORAGE_KEY1,"投与済みです");
+        document.getElementById("p1_st").innerText = "投与済みです";
+    }
+
+    function getStorage2(){
+        let st2 = localStorage.getItem(STORAGE_KEY2);
+        if(st2 !== null){
+            return st2;
+        }else{
+            return "未投与です";
+        }
+    }
+    function setStatus2(status2){
+        document.getElementById("p2_st").innerText = status2;
+        setStorage2(status2);
+    }
+    function setStorage2(status2){
+        localStorage.setItem(STORAGE_KEY2,status2);
+    }
+    function st2_change(){
+        localStorage.setItem(STORAGE_KEY2,"投与済みです");
+        document.getElementById("p2_st").innerText = "投与済みです";
+    }
+
         
     </script>
 </head>
@@ -52,8 +99,8 @@
         </tr>
     </table>
     <button id="st0_change" onclick="st0_change()">ステータス変更1⃣</button><br>
-    <button id="st1_change">ステータス変更2⃣</button><br>
-    <button id="st2_change">ステータス変更3⃣</button><br>
+    <button id="st1_change" onclick="st1_change()">ステータス変更2⃣</button><br>
+    <button id="st2_change" onclick="st2_change()">ステータス変更3⃣</button><br>
     <button id="reset_st">ステータスリセット</button>
 </body>
 </html>
