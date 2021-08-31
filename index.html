@@ -7,33 +7,28 @@
 
     <script>
 
-        window.onload = function(){
-            let status0 = window.localStorage.getItem(STATUS0);
-            let status1 = window.localStorage.getItem(STATUS1);
-            let status2 = window.localStorage.getItem(STATUS2);
+    var STORAGE_KEY0 = "P0_ST";
 
-            if(status0 !== null){
-                $("#p0_st").html(status0);
-            }else{
-                $("#p0_st").html("未投与です");
-            }
-            if(status1 !== null){
-                $("#p1_st").html(status1);
-            }else{
-                $("#p1_st").html("未投与です");
-            }
-            if(status2 !== null){
-                $("#p2_st").html(status2);
-            }else{
-                $("#p2_st").html("未投与です");
-            }
-            
-        };
+    window.onload = function(){
+        let status0 = getStorage0();
+        setStatus0(status0);
+    }
 
-        function st0_change(){
-            
-            $("#p0_st").html("投与済みです");
+    function getStorage0(){
+        let st0 = localStorage.getItem(STORAGE_KEY0);
+        if(st0 !== null){
+            return st0;
+        }else{
+            return "未投与です";
         }
+    }
+    function setStatus0(status0){
+        $("#p0_st").html = status0;
+        setStorage0(status0);
+    }
+    function setStorage0(status0){
+        localStorage.setItem(STORAGE_KEY0,status0);
+    }
         
     </script>
 </head>
