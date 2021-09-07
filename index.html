@@ -90,6 +90,14 @@
     function go(){
         location.href="reset.html";
     }
+
+    function gopage(){
+        if(localStorage.hasOwnProperty('STORAGE_KEY0')){
+            alert("確認済みの患者です");
+        }else{
+            alert("注意！未確認です！");
+        }
+    }
         
     </script>
 </head>
@@ -112,6 +120,7 @@
     <button id="st1_change" onclick="st1_change()">ステータス変更2⃣</button><br>
     <button id="st2_change" onclick="st2_change()">ステータス変更3⃣</button><br>
     <button id="reset_st" onclick="reset()">ステータスリセット</button><br>
-    <button onclick="go()">次へ</button>
+    <button onclick="go()">次へ</button><br><br>
+    <button onclick="gopage()">条件分岐</button>
 </body>
 </html>
